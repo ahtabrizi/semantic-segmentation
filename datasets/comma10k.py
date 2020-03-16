@@ -20,10 +20,10 @@ trainid_to_name = cityscapes_labels.trainId2name
 
 
 id_to_trainid = {
-  0x40: 0,
-  0xff: 1,
-  0x80: 2,
-  0x00: 3,
+  0x40: 0,   # road
+  0xff: 1,   # lane marking
+  0x80: 10,  # sky/undrivable
+  0x00: 13,  # car
   0xcc: 4}
 
 num_classes = 19

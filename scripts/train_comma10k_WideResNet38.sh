@@ -4,13 +4,12 @@ CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch --nproc_per_node=1 tra
   --dataset comma10k \
   --cv 2 \
   --arch network.deepv3.DeepWV3Plus \
-  --snapshot ./pretrained_models/cityscapes_best.pth \
   --class_uniform_pct 0.0 \
   --class_uniform_tile 300 \
-  --lr 0.001 \
+  --lr 2e-2 \
   --lr_schedule poly \
   --poly_exp 1.0 \
-  --sgd \
+  --adam \
   --crop_size 360 \
   --scale_min 1.0 \
   --scale_max 2.0 \
@@ -19,9 +18,11 @@ CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch --nproc_per_node=1 tra
   --img_wt_loss \
   --wt_bound 1.0 \
   --bs_mult 2 \
-  --exp kitti_ft \
+  --exp comma10k \
   --ckpt ./logs/ \
   --tb_path ./logs/
 
+  #--lr 0.001 \
+  #--snapshot ./pretrained_models/cityscapes_best.pth \
   #--apex \
   #--syncbn \
