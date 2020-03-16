@@ -16,3 +16,4 @@ dist/
 *.so
 .torch
 .DS_Store
+pretrained_models
