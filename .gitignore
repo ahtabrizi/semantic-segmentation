@@ -17,3 +17,4 @@ dist/
 .torch
 .DS_Store
 pretrained_models
+logs
