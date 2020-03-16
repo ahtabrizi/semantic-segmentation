@@ -16,7 +16,16 @@ from config import cfg
 
 
 trainid_to_name = cityscapes_labels.trainId2name
-id_to_trainid = cityscapes_labels.label2trainid
+#id_to_trainid = cityscapes_labels.label2trainid
+
+
+id_to_trainid = {
+  0x40: 0,
+  0xff: 1,
+  0x80: 2,
+  0x00: 3,
+  0xcc: 4}
+
 num_classes = 19
 ignore_label = 255
 root = cfg.DATASET.KITTI_DIR
@@ -233,7 +242,7 @@ class COMMA10K(data.Dataset):
             sys.exit()
 
         if self.mode != 'test':
-            mask = np.array(mask)
+            mask = np.array(mask)[:, :, 0]
             mask_copy = mask.copy()
 
             for k, v in id_to_trainid.items():
