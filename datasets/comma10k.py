@@ -22,11 +22,11 @@ trainid_to_name = cityscapes_labels.trainId2name
 id_to_trainid = {
   0x40: 0,   # road
   0xff: 1,   # lane marking
-  0x80: 10,  # sky/undrivable
-  0x00: 13,  # car
-  0xcc: 4}
+  0x80: 2,   # sky/undrivable
+  0x00: 3,   # car
+  0xcc: 4}   # ego
 
-num_classes = 19
+num_classes = 5
 ignore_label = 255
 root = cfg.DATASET.KITTI_DIR
 aug_root = cfg.DATASET.KITTI_AUG_DIR
